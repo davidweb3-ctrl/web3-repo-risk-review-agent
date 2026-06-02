@@ -1,0 +1,22 @@
+{
+  "name": "web3-repo-risk-review-agent-gitlab-tools",
+  "description": "Planned GitLab MCP tool usage for the Web3 Repo Risk Review Agent.",
+  "tools": [
+    {
+      "name": "summarize_merge_request",
+      "purpose": "Read merge request metadata, changed files, labels, discussion, and pipeline status."
+    },
+    {
+      "name": "create_review_comment",
+      "purpose": "Post a concise Web3 risk review comment on the merge request."
+    },
+    {
+      "name": "label_merge_request",
+      "purpose": "Apply risk labels such as risk:block-release or risk:changes-requested."
+    },
+    {
+      "name": "open_issue",
+      "purpose": "Open a release-blocking issue when critical contract, payment, or CI risk is detected."
+    }
+  ]
+}
