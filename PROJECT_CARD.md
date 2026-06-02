@@ -33,4 +33,12 @@ Rules:
 
 Current next action:
 
-Finish the local demo, verify build/browser behavior, then prepare public repo and hosted demo path.
+Publish the public repo, deploy the static demo, wire or demonstrate the Google Cloud / Gemini / GitLab MCP path, then record a short demo video before final Devpost submission.
+
+Latest verification:
+
+- `npm install` succeeded.
+- `npm run check` passed.
+- Playwright loaded the local app on desktop and mobile viewports.
+- Browser console error check passed.
+- Local initial commit: `8f2a236`.
