@@ -45,7 +45,12 @@ Rules:
 
 Current next action:
 
-Wire or demonstrate the Google Cloud / Gemini / GitLab MCP path, then record a short demo video before final Devpost submission.
+Choose the final video positioning:
+
+- prototype wording: deterministic demo plus GitLab MCP-compatible action contract; or
+- live integration wording: record Gemini/GitLab MCP auth and read-only GitLab context retrieval first.
+
+Then record a short demo video before final Devpost submission.
 
 Latest verification:
 
@@ -57,3 +62,5 @@ Latest verification:
 - Public GitHub repo created and pushed.
 - GitHub Pages deployed successfully.
 - Hosted HTML, favicon, JS, and CSS assets returned HTTP 200.
+- Gemini/GitLab MCP evidence boundary documented in `docs/gemini-gitlab-mcp-evidence.md`.
+- Three-minute demo video plan documented in `docs/video-plan.md`.
