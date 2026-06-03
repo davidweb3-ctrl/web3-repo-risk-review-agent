@@ -16,6 +16,18 @@ Local workspace:
 /Users/xiadawei/codeSpace/web3/hackathon/web3-repo-risk-review-agent
 ```
 
+Public repo:
+
+```text
+https://github.com/davidweb3-ctrl/web3-repo-risk-review-agent
+```
+
+Hosted demo:
+
+```text
+https://davidweb3-ctrl.github.io/web3-repo-risk-review-agent/
+```
+
 Opportunity:
 
 Google Cloud Rapid Agent Hackathon.
@@ -33,7 +45,7 @@ Rules:
 
 Current next action:
 
-Publish the public repo, deploy the static demo, wire or demonstrate the Google Cloud / Gemini / GitLab MCP path, then record a short demo video before final Devpost submission.
+Wire or demonstrate the Google Cloud / Gemini / GitLab MCP path, then record a short demo video before final Devpost submission.
 
 Latest verification:
 
@@ -42,3 +54,6 @@ Latest verification:
 - Playwright loaded the local app on desktop and mobile viewports.
 - Browser console error check passed.
 - Local initial commit: `8f2a236`.
+- Public GitHub repo created and pushed.
+- GitHub Pages deployed successfully.
+- Hosted HTML, favicon, JS, and CSS assets returned HTTP 200.

@@ -4,6 +4,11 @@ A Gemini-ready agent workflow for the Google Cloud Rapid Agent Hackathon.
 
 The project reviews GitLab-style repository context and produces a Web3-specific release risk review: blockers, missing tests, GitLab actions, and human-readable release guidance.
 
+## Live Links
+
+- Public repo: https://github.com/davidweb3-ctrl/web3-repo-risk-review-agent
+- Hosted demo: https://davidweb3-ctrl.github.io/web3-repo-risk-review-agent/
+
 ## Hackathon Direction
 
 - Hackathon: Google Cloud Rapid Agent Hackathon
