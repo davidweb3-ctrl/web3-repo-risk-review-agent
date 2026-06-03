@@ -64,3 +64,11 @@ Latest verification:
 - Hosted HTML, favicon, JS, and CSS assets returned HTTP 200.
 - Gemini/GitLab MCP evidence boundary documented in `docs/gemini-gitlab-mcp-evidence.md`.
 - Three-minute demo video plan documented in `docs/video-plan.md`.
+
+Video acceptance gate:
+
+- Check every sampled frame for normal content and no broken/corrupted/blank frame.
+- Run a full decode check before upload.
+- Confirm narration audio exists and is clear.
+- Confirm audio and visuals line up within about `1` second.
+- Do not upload or submit the video until the frame, decode, audio, sync, and privacy checks in `docs/video-plan.md` pass.
