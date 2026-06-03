@@ -1,6 +1,15 @@
 {
   "name": "web3-repo-risk-review-agent-gitlab-tools",
-  "description": "Planned GitLab MCP tool usage for the Web3 Repo Risk Review Agent.",
+  "description": "GitLab MCP-compatible tool usage for the Web3 Repo Risk Review Agent.",
+  "officialGitLabMcpHttpUrl": "https://gitlab.com/api/v4/mcp",
+  "geminiCliSettingsExample": {
+    "mcpServers": {
+      "GitLab": {
+        "httpUrl": "https://gitlab.com/api/v4/mcp"
+      }
+    }
+  },
+  "verificationBoundary": "The public demo uses deterministic GitLab-style context and produces MCP-compatible action payloads. A live GitLab OAuth/Gemini CLI connection should be recorded separately before claiming full runtime integration.",
   "tools": [
     {
       "name": "summarize_merge_request",

@@ -51,6 +51,11 @@ This MVP is designed to be wired to GitLab MCP / Google Cloud Agent Builder. The
 
 Before final submission, the project should be connected to the selected partner MCP path and the hosted demo/video links should be updated on Devpost.
 
+Integration evidence and safe demo wording are documented in:
+
+- `docs/gemini-gitlab-mcp-evidence.md`
+- `docs/video-plan.md`
+
 Planned production path:
 
 - Use GitLab MCP to read merge request, branch, changed-file, pipeline, issue, and comment context.
