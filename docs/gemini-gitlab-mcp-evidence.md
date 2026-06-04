@@ -26,6 +26,28 @@ Do not claim that the public demo has completed live GitLab OAuth, Gemini CLI, o
   - create a review comment;
   - open a release-blocking issue.
 
+## Local Integration Prep Status
+
+As of 2026-06-04:
+
+- Gemini CLI is installed and logged in.
+- Gemini CLI version observed locally: `0.45.0`.
+- `~/.gemini/settings.json` includes the GitLab MCP server:
+
+```json
+{
+  "mcpServers": {
+    "GitLab": {
+      "httpUrl": "https://gitlab.com/api/v4/mcp"
+    }
+  }
+}
+```
+
+- Starting Gemini CLI in the project workspace shows `1 MCP server`, confirming that the GitLab MCP configuration is loaded.
+- Live GitLab OAuth is still pending because `/mcp auth GitLab` must be completed in an interactive Gemini terminal and approved in the browser by the user.
+- Do not claim live GitLab MCP runtime evidence until OAuth succeeds and a read-only GitLab context retrieval is captured.
+
 ## Safe Demo Wording
 
 Use:
@@ -48,8 +70,29 @@ Avoid unless a GitLab write action is actually executed:
 
 If Gemini CLI access is available before the final video:
 
-1. Install or open Gemini CLI / Gemini Code Assist.
-2. Add this MCP configuration to `~/.gemini/settings.json`:
+1. Open Gemini CLI in a normal terminal:
+
+```bash
+cd /Users/xiadawei/codeSpace/web3/hackathon/web3-repo-risk-review-agent
+gemini
+```
+
+2. Confirm the footer shows `1 MCP server`.
+3. Run:
+
+```text
+/mcp auth GitLab
+```
+
+4. Approve OAuth in the browser.
+5. Ask Gemini to inspect a safe public GitLab test project or a non-sensitive demo merge request.
+6. Capture only non-sensitive evidence:
+   - connected MCP server list;
+   - read-only project/MR context retrieval;
+   - generated review guidance;
+   - proposed action payloads.
+
+The configured MCP entry is:
 
 ```json
 {
@@ -60,15 +103,6 @@ If Gemini CLI access is available before the final video:
   }
 }
 ```
-
-3. Run `/mcp auth GitLab`.
-4. Approve OAuth in the browser.
-5. Ask Gemini to inspect a safe public GitLab test project or a non-sensitive demo merge request.
-6. Capture only non-sensitive evidence:
-   - connected MCP server list;
-   - read-only project/MR context retrieval;
-   - generated review guidance;
-   - proposed action payloads.
 
 Do not record tokens, private repositories, private issues, production secrets, payment details, or any private vulnerability material.
 

@@ -45,12 +45,15 @@ Rules:
 
 Current next action:
 
-Choose the final video positioning:
+Complete GitLab MCP OAuth in Gemini CLI if pursuing live-integration wording:
 
-- prototype wording: deterministic demo plus GitLab MCP-compatible action contract; or
-- live integration wording: record Gemini/GitLab MCP auth and read-only GitLab context retrieval first.
+```text
+/mcp auth GitLab
+```
 
-Then record a short demo video before final Devpost submission.
+Then capture read-only GitLab context retrieval evidence. If OAuth blocks, use prototype wording: deterministic hosted demo plus GitLab MCP-compatible action contract.
+
+After wording is chosen, record a short demo video before final Devpost submission.
 
 Latest verification:
 
@@ -64,6 +67,10 @@ Latest verification:
 - Hosted HTML, favicon, JS, and CSS assets returned HTTP 200.
 - Gemini/GitLab MCP evidence boundary documented in `docs/gemini-gitlab-mcp-evidence.md`.
 - Three-minute demo video plan documented in `docs/video-plan.md`.
+- Gemini CLI `0.45.0` is installed and logged in.
+- `~/.gemini/settings.json` contains GitLab MCP endpoint `https://gitlab.com/api/v4/mcp`.
+- Gemini CLI detects `1 MCP server` in the project workspace.
+- GitLab OAuth / read-only runtime evidence is still pending user browser approval.
 
 Video acceptance gate:
 
