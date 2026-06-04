@@ -2,6 +2,8 @@ node_modules/
 dist/
 output/
 .playwright-cli/
+demo/rendered/
+demo/frame-review/frame-*.jpg
 .env
 .env.*
 !.env.example

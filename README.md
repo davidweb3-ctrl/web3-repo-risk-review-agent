@@ -8,6 +8,7 @@ The project reviews GitLab-style repository context and produces a Web3-specific
 
 - Public repo: https://github.com/davidweb3-ctrl/web3-repo-risk-review-agent
 - Hosted demo: https://davidweb3-ctrl.github.io/web3-repo-risk-review-agent/
+- Demo video: https://github.com/davidweb3-ctrl/web3-repo-risk-review-agent/raw/main/demo/web3-repo-risk-review-agent-demo.mp4
 
 ## Hackathon Direction
 
@@ -55,6 +56,7 @@ Integration evidence and safe demo wording are documented in:
 
 - `docs/gemini-gitlab-mcp-evidence.md`
 - `docs/video-plan.md`
+- `demo/video-qa-report.md`
 
 Planned production path:
 

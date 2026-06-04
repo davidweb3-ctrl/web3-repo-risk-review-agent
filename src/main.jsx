@@ -15,10 +15,26 @@ import { sampleContexts } from "./sampleGitlabContext.js";
 import { reviewGitlabContext } from "./riskEngine.js";
 import "./styles.css";
 
+const contextIds = new Set(sampleContexts.map((item) => item.id));
+
+function getInitialContextId() {
+  const requested = new URLSearchParams(window.location.search).get("scenario");
+  return contextIds.has(requested) ? requested : sampleContexts[0].id;
+}
+
 function App() {
-  const [contextId, setContextId] = useState(sampleContexts[0].id);
+  const [contextId, setContextId] = useState(getInitialContextId);
   const context = sampleContexts.find((item) => item.id === contextId) || sampleContexts[0];
   const review = useMemo(() => reviewGitlabContext(context), [context]);
+
+  const handleScenarioChange = (event) => {
+    const nextContextId = event.target.value;
+    const params = new URLSearchParams(window.location.search);
+
+    params.set("scenario", nextContextId);
+    window.history.replaceState(null, "", `${window.location.pathname}?${params}${window.location.hash}`);
+    setContextId(nextContextId);
+  };
 
   return (
     <main className="app-shell">
@@ -44,7 +60,7 @@ function App() {
             <h2>GitLab Context</h2>
           </div>
           <label htmlFor="scenario">Scenario</label>
-          <select id="scenario" value={contextId} onChange={(event) => setContextId(event.target.value)}>
+          <select id="scenario" value={contextId} onChange={handleScenarioChange}>
             {sampleContexts.map((item) => (
               <option key={item.id} value={item.id}>
                 {item.label}
@@ -95,7 +111,7 @@ function App() {
           </div>
 
           <div className="grid-two">
-            <section className="card">
+            <section className="card" id="risk-findings">
               <div className="panel-header">
                 <AlertTriangle size={19} />
                 <h2>Risk Findings</h2>
@@ -125,7 +141,7 @@ function App() {
               )}
             </section>
 
-            <section className="card">
+            <section className="card" id="next-actions">
               <div className="panel-header">
                 <CheckCircle2 size={19} />
                 <h2>Next Actions</h2>
@@ -138,7 +154,7 @@ function App() {
             </section>
           </div>
 
-          <section className="card">
+          <section className="card" id="agent-builder-packet">
             <div className="panel-header">
               <Bot size={19} />
               <h2>Gemini / Agent Builder Packet</h2>
@@ -161,7 +177,7 @@ function App() {
           </section>
 
           <div className="grid-two">
-            <section className="card">
+            <section className="card" id="gitlab-actions">
               <div className="panel-header">
                 <TerminalSquare size={19} />
                 <h2>Proposed GitLab Actions</h2>
