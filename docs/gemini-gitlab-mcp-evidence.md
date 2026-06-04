@@ -45,8 +45,11 @@ As of 2026-06-04:
 ```
 
 - Starting Gemini CLI in the project workspace shows `1 MCP server`, confirming that the GitLab MCP configuration is loaded.
-- Live GitLab OAuth is still pending because `/mcp auth GitLab` must be completed in an interactive Gemini terminal and approved in the browser by the user.
-- Do not claim live GitLab MCP runtime evidence until OAuth succeeds and a read-only GitLab context retrieval is captured.
+- `/mcp auth GitLab` completed the browser OAuth flow and Gemini reported successful authentication.
+- The subsequent MCP discovery step failed with `POST /api/v4/mcp` returning `404 Not Found`, so Gemini still shows `GitLab - Disconnected` and no GitLab MCP tools are available.
+- GitLab's official MCP troubleshooting page documents this exact class of issue: OAuth can complete successfully while `POST /api/v4/mcp` still returns `404 Not Found`; the docs tie MCP availability to GitLab Duo and beta/experimental feature prerequisites.
+- Interpretation: the identity/auth step succeeded, but live GitLab MCP runtime evidence is blocked at tool discovery. Do not claim live GitLab MCP runtime integration until the server shows connected and a read-only GitLab context retrieval is captured.
+- Do not record or publish the OAuth URL, because it includes authorization parameters.
 
 ## Safe Demo Wording
 
@@ -57,6 +60,10 @@ Use:
 Use:
 
 > The final production connection point is GitLab MCP at `https://gitlab.com/api/v4/mcp`; the current demo uses deterministic GitLab-style context so judges can inspect the release-risk logic without needing private credentials.
+
+Use if discussing the live integration attempt:
+
+> We configured Gemini CLI for GitLab MCP and completed the GitLab OAuth flow. The post-auth MCP discovery request returned `404 Not Found`, so the submitted demo treats GitLab MCP as the intended integration boundary rather than claiming a live connected runtime.
 
 Avoid unless live auth evidence exists:
 
@@ -105,6 +112,8 @@ The configured MCP entry is:
 ```
 
 Do not record tokens, private repositories, private issues, production secrets, payment details, or any private vulnerability material.
+
+If OAuth succeeds but `/mcp` still shows disconnected with `POST /api/v4/mcp` returning `404 Not Found`, stop repeating the OAuth flow unless GitLab Duo / beta feature eligibility changes. Repeated login does not prove live MCP access.
 
 ## Video Evidence Positioning
 

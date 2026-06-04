@@ -45,15 +45,15 @@ Rules:
 
 Current next action:
 
-Complete GitLab MCP OAuth in Gemini CLI if pursuing live-integration wording:
+Use prototype-safe demo wording unless GitLab MCP discovery starts working:
 
-```text
-/mcp auth GitLab
-```
+- Gemini CLI is installed and logged in.
+- GitLab MCP endpoint is configured and visible to Gemini CLI.
+- GitLab OAuth succeeded through `/mcp auth GitLab`.
+- Post-auth MCP discovery failed with `POST /api/v4/mcp` returning `404 Not Found`, so Gemini still shows `GitLab - Disconnected`.
+- Do not claim live GitLab MCP runtime integration unless `/mcp` shows connected and a read-only GitLab context retrieval is captured.
 
-Then capture read-only GitLab context retrieval evidence. If OAuth blocks, use prototype wording: deterministic hosted demo plus GitLab MCP-compatible action contract.
-
-After wording is chosen, record a short demo video before final Devpost submission.
+Next step: record a short prototype-safe demo video before final Devpost submission.
 
 Latest verification:
 
@@ -70,7 +70,8 @@ Latest verification:
 - Gemini CLI `0.45.0` is installed and logged in.
 - `~/.gemini/settings.json` contains GitLab MCP endpoint `https://gitlab.com/api/v4/mcp`.
 - Gemini CLI detects `1 MCP server` in the project workspace.
-- GitLab OAuth / read-only runtime evidence is still pending user browser approval.
+- GitLab OAuth succeeded, but post-auth MCP discovery returned `404 Not Found`; GitLab remains disconnected in Gemini CLI.
+- Live GitLab MCP read-only runtime evidence is blocked until GitLab MCP discovery succeeds.
 
 Video acceptance gate:
 
