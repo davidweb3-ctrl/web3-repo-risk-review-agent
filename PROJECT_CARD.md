@@ -8,7 +8,7 @@ Command center:
 /Users/xiadawei/codeSpace/web3/web3-execution-lab
 ```
 
-Status: ACTIVE
+Status: SUBMITTED
 
 Local workspace:
 
@@ -26,6 +26,12 @@ Hosted demo:
 
 ```text
 https://davidweb3-ctrl.github.io/web3-repo-risk-review-agent/
+```
+
+Devpost submission:
+
+```text
+https://devpost.com/software/web3-repo-risk-review-agent
 ```
 
 Demo video:
@@ -51,15 +57,15 @@ Rules:
 
 Current next action:
 
-Use prototype-safe demo wording unless GitLab MCP discovery starts working:
+Monitor Devpost / Google Cloud Rapid Agent Hackathon judging and edit only if an organizer asks for a correction or a public link breaks.
+
+Submission used prototype-safe demo wording:
 
 - Gemini CLI is installed and logged in.
 - GitLab MCP endpoint is configured and visible to Gemini CLI.
 - GitLab OAuth succeeded through `/mcp auth GitLab`.
 - Post-auth MCP discovery failed with `POST /api/v4/mcp` returning `404 Not Found`, so Gemini still shows `GitLab - Disconnected`.
 - Do not claim live GitLab MCP runtime integration unless `/mcp` shows connected and a read-only GitLab context retrieval is captured.
-
-Next step: upload/use the demo video link on Devpost, preview the submitted project, and only then click final Devpost submit if all links render correctly.
 
 Latest verification:
 
@@ -81,6 +87,8 @@ Latest verification:
 - Prototype-safe demo video generated at `demo/web3-repo-risk-review-agent-demo.mp4`.
 - Video duration is `167.88s` (`2:47.88`), resolution is `1920x1080`, and audio is AAC mono.
 - `demo/video-qa-report.md` records the decode, black-screen, silence, sampled-frame, privacy, and contact-sheet checks.
+- Devpost project page submitted on 2026-06-05: `https://devpost.com/software/web3-repo-risk-review-agent`.
+- User screenshot shows `SUBMITTED TO Google Cloud Rapid Agent Hackathon` with public project page visible.
 
 Video acceptance gate:
 
